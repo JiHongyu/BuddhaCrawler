@@ -6,10 +6,38 @@
 # https://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
-
+from scrapy.loader.processors import Join, MapCompose, TakeFirst
+from w3lib.html import remove_tags
 
 class BuddhacrawlerItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
-
+    url = scrapy.Field(
+        output_processor=TakeFirst()
+    )
+    hostUrl = scrapy.Field(
+        output_processor=TakeFirst()
+    )
+    city = scrapy.Field(
+        output_processor=TakeFirst()
+    )
+    articleTitle = scrapy.Field(
+        input_processor=MapCompose(remove_tags),
+        output_processor=TakeFirst()
+    )
+    articleText = scrapy.Field(
+        output_processor=TakeFirst()
+    )
+    publishTime = scrapy.Field(
+        output_processor=TakeFirst()
+    )
+    coverPictureUrl = scrapy.Field(
+        output_processor=TakeFirst()
+    )
+    articlePictureUrls = scrapy.Field(
+        output_processor=TakeFirst()
+    )
+    articleVideoUrls = scrapy.Field(
+        output_processor=TakeFirst()
+    )
+    createTime = scrapy.Field(
+        output_processor=TakeFirst()
+    )
