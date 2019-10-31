@@ -32,12 +32,8 @@ class BuddhacrawlerItem(scrapy.Item):
     coverPictureUrl = scrapy.Field(
         output_processor=TakeFirst()
     )
-    articlePictureUrls = scrapy.Field(
-        output_processor=TakeFirst()
-    )
-    articleVideoUrls = scrapy.Field(
-        output_processor=TakeFirst()
-    )
+    articlePictureUrls = scrapy.Field()
+    articleVideoUrls = scrapy.Field()
     createTime = scrapy.Field(
         output_processor=TakeFirst()
     )
