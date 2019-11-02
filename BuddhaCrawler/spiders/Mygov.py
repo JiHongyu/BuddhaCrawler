@@ -65,6 +65,7 @@ class MygovSpider(scrapy.Spider):
             cnt = 0
             imgUrlStrList = []
             for url in item.get('articlePictureUrls'):
+                cnt += 1
                 u = urlparse(item.get('url'))
                 data = None
 
