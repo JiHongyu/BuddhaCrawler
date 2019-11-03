@@ -35,6 +35,7 @@ class CollectWebInfo(Base):
     hostUrl = Column('host_url', String(256), nullable=False)
     city = Column('city', String(256), nullable=True)
     articleTitle = Column('article_title', String(256), nullable=True)
+    articleTag = Column('article_tag', String(128), nullable=True)
     articleText = Column('article_text', TEXT, nullable=True)
     publishTime = Column('publish_time', TIMESTAMP(True), nullable=True)
     coverPictureUrl = Column('cover_picture_url', String(256), nullable=True)

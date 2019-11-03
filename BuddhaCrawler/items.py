@@ -23,6 +23,9 @@ class BuddhacrawlerItem(scrapy.Item):
         input_processor=MapCompose(remove_tags),
         output_processor=TakeFirst()
     )
+    articleTag = scrapy.Field(
+        output_processor=Join(';')
+    )
     articleText = scrapy.Field(
         output_processor=TakeFirst()
     )
